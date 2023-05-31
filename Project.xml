@@ -35,7 +35,7 @@
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
-	<haxelib name="flixel" path="C:\Users\Tim\Prog Projects\Haxe\HaxeFlixel" />
+	<haxelib name="flixel"/>
 
 	<!--In case you want to use the addons package-->
 	<!--<haxelib name="flixel-addons" />-->
