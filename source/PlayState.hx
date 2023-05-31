@@ -252,34 +252,6 @@ class PlayState extends FlxState
 		openflGroup.addChild(field);
 	}
 
-	function createFlixelTextNew(opts:TextOptions)
-	{
-		// TODO: Creates FlxText with reworked autosizing
-		// NOTE: That's probably isn't needed, consider this code stale
-
-		/**
-			- Reworked FlxText autosizing
-					- [x] add fieldHeight prop to set textField.height
-					- [x] add autoHeight prop to allow fixed width but auto height
-					- [x] fieldWidth and fieldHeight are plain setters for underlying textField
-					- [x] add fieldHeight to constructor
-					- [x] constructor still allows to use width<=0 to set auto size
-					- [x] constructor allows width=NUM and height<=0 to set fixed width but auto height
-					- [x] remove autosize and wordwrap updates from fieldWidth
-					- [x] change autoSize setter to also update wordwrap
-		**/
-
-		// NOTE: `untyped` is used to deal with git branch switching
-
-		// var flixelText = new FlxText(opts.x ?? 10.0, opts.y ?? 0.0, opts.width ?? 0.0, untyped opts.height ?? 0.0);
-		var flixelText = new FlxText(opts.x ?? 10.0, opts.y ?? 0.0, opts.width ?? 0.0);
-
-		if (opts.autoHeight != null)
-			untyped flixelText.autoHeight = opts.autoHeight;
-
-		flixelGroup.add(flixelText);
-	}
-
 	override public function update(elapsed:Float)
 	{
 		if (FlxG.keys.justPressed.O)
