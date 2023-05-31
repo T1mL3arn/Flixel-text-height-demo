@@ -36,11 +36,6 @@ class PlayState extends FlxState
 		Lib.current.stage.addChild(openflGroup);
 		openflGroup.visible = false;
 
-		// Some hints and notes about text fields:
-		//
-		// NOTE if autoSize is set then openfl TextField does not react
-		// on setting its height.
-
 		// Demo info:
 		//
 		// OpenFl textfield building options are different from Flixel,
@@ -144,15 +139,20 @@ class PlayState extends FlxState
 			- FlxText must have prop to set height, e.g. `fieldHeight`
 			- Need to figure out all relevant combinations of width,
 				height, autosize, to test inconsistencies with openfl
-					Default FlxText with fixed width:
-						- width is SET
-						- word wrap is TRUE
-						- autosize is FALSE
-					Similar TextField is:
-						- width is SET
-						- height is SET (but actually got determined automatically)
-						- word wrap is true
-						- autosize is SET
+
+			Some random notes:
+				if autoSize is set then openfl TextField does not react
+				on setting its height.
+
+				Default FlxText with fixed width:
+					- width is SET
+					- word wrap is TRUE
+					- autosize is FALSE
+				Similar TextField is:
+					- width is SET
+					- height is SET (but actually got determined automatically)
+					- word wrap is true
+					- autosize is SET
 		**/
 
 		trace('------- Flixel -------');
@@ -171,8 +171,8 @@ class PlayState extends FlxState
 		// trace(textfield.fieldWidth, textfield.fieldHeight);
 		if (opts.width != null)
 			flixelText.fieldWidth = opts.width;
-		// tracing it before setting autosize fixes hashlink target
-		// i.e. FlxText get desired size (free width and fixed height)
+		// tracing it before setting autosize fixed hashlink target
+		// some time ago, now it shouldn't be relevant
 		// trace(flixelText.textField.width, flixelText.textField.height);
 		if (opts.height != null)
 			flixelText.fieldHeight = opts.height;
